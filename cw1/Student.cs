@@ -5,12 +5,14 @@ public class Student {
   public string surname { get; set; }
   public int age { get; set; }
   public DateTime birthDate { get; set; }
+  public List<Grade> grades { get; set; }
 
   public Student(string name, string surname, int age, DateTime birthDate) {
     this.name = name;
     this.surname = surname;
     this.age = age;
     this.birthDate = birthDate;
+    this.grades = new List<Grade>;
   }
 
   public Student(string name, string surname, DateTime birthDate) {
@@ -18,6 +20,7 @@ public class Student {
     this.surname = surname;
     this.age = GetAgeFromBirthDate(birthDate);
     this.birthDate = birthDate;
+    this.grades = new List<Grade>;
   }
 
   public static int GetAgeFromBirthDate(DateTime birthDate) {
@@ -28,5 +31,9 @@ public class Student {
     }
 
     return age;
+  }
+
+  public void AddGrade(Grade grade) {
+    this.grades.Add(grade);
   }
 }
