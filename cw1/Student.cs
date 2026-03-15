@@ -1,10 +1,6 @@
 namespace cw1;
 
-public class Student {
-  public string name { get; set; }
-  public string surname { get; set; }
-  public int age { get; set; }
-  public DateTime birthDate { get; set; }
+public class Student : Person {
   public List<Grade> grades { get; set; }
 
   public Student(string name, string surname, int age, DateTime birthDate) {
