@@ -29,4 +29,18 @@ public class Student {
     avg = sum/this.grades.Count;
     return avg;
   }
+
+  public double CalculateGradeAvg(int year) {
+    double avg = 0;
+    double sum = 0;
+    
+    foreach (var g in this.grades) {
+      if (g.date.Year == year) {  
+        sum += g.grade;
+      }
+    }
+
+    avg = sum/this.grades.Count;
+    return avg;
+  }
 }
