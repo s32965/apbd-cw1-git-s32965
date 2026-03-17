@@ -1,3 +1,5 @@
+using System.ComponentModel.Design;
+
 namespace cw1;
 
 public class Student {
@@ -42,5 +44,38 @@ public class Student {
 
     avg = sum/this.grades.Count;
     return avg;
+  }
+
+  public Subject GetBestSubjectByAvgGrade() {
+    Dictionary<Subject, double> sums = new Dictionary<Subject, double>();
+    Dictionary<Subject, int> numOfSub = new Dictionary<Subject, int>();
+
+    foreach (var g in grades) {
+      if (sums.ContainsKey(g.subject)) {
+        sums[g.subject] += g.grade;
+      } else {
+        sums.Add(g.subject, g.grade);
+      }
+
+      if (numOfSub.ContainsKey(g.subject)) {
+        numOfSub[g.subject] += 1;
+      } else {
+        numOfSub.Add(g.subject, 1);
+      }
+    }
+    Console.WriteLine(sums.Count);
+    Console.WriteLine(numOfSub.Count);
+  
+    double maxAvg = 0;
+    Subject? maxAvgSub = null;
+    foreach (var key in sums) {
+      double avg = sums[key.Key]/numOfSub[key.Key];
+      if (avg > maxAvg) {
+        maxAvg = avg;
+        maxAvgSub = key.Key;
+      }
+    }
+
+    return maxAvgSub;
   }
 }
