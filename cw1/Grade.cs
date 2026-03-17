@@ -6,7 +6,11 @@ public class Grade {
   public DateTime date { get; set; }
 
   public Grade(int grade, Subject subject, DateTime date) {
-    this.grade = grade;
+    if (grade >=1 && grade <= 6) {
+      this.grade = grade;
+    } else {
+      throw new Exception("Grade is to big");
+    }
     this.subject = subject;
     this.date = date;
   }
