@@ -99,16 +99,16 @@ public class Student {
     Console.WriteLine(sums.Count);
     Console.WriteLine(numOfSub.Count);
   
-    double minAvg = sums[sums.First().Key]/numOfSub[sums.First().Key];
-    Subject? minAvgSub = null;
+    double min_Avg = sums[sums.First().Key]/numOfSub[sums.First().Key];
+    Subject? min_Avg_Sub = null;
     foreach (var key in sums) {
       double avg = sums[key.Key]/numOfSub[key.Key];
-      if (avg < minAvg) {
-        minAvg = avg;
-        minAvgSub = key.Key;
+      if (avg < min_Avg) {
+        min_Avg = avg;
+        min_Avg_Sub = key.Key;
       }
     }
 
-    return minAvgSub;
+    return min_Avg_Sub;
   }
 }
