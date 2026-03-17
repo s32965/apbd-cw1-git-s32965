@@ -6,12 +6,17 @@ public class Project {
 
     Subject math = new Subject("math", new Person("Mathe", "Matic", DateTime.Now));
     Subject english = new Subject("english", new Person("Johnny", "English", DateTime.Now));
+    Subject physics = new Subject("physics", new Person("Zingnoruj", "Opór-Powietrza", DateTime.Now));
 
     s1.AddGrade(new Grade(5, math, DateTime.Now));
     s1.AddGrade(new Grade(6, math, DateTime.Now));
     s1.AddGrade(new Grade(6, english, DateTime.Now));
     s1.AddGrade(new Grade(6, english, DateTime.Now));
     s1.AddGrade(new Grade(1, english, DateTime.Now));
+    s1.AddGrade(new Grade(6, math, DateTime.Now));
+    s1.AddGrade(new Grade(4, english, DateTime.Now));
+    s1.AddGrade(new Grade(3, physics, DateTime.Now));
+    s1.AddGrade(new Grade(3, physics, DateTime.Now));
 
     Console.WriteLine(s1.grades.Count);
     Console.WriteLine(s1.GetBestSubjectByAvgGrade().name);
