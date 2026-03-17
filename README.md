@@ -4,3 +4,6 @@
 2. Merge robim jeden commit ze zmianami z gałęzi do gałęzi, na którą mergujemy.
     Rebase aplikuje commity z gałęzi rebasowanej na gałąź, której rebasuje.
     Dzięki rebasowi widzimy historie obu gałęzi razem.
+
+3. Konflikt został rozwiązany przez pozostawienie opcji zgadzającej się ze 
+    standardem nazewnictwa w języku C#.
