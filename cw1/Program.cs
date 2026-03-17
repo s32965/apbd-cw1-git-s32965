@@ -15,5 +15,6 @@ public class Project {
 
     Console.WriteLine(s1.grades.Count);
     Console.WriteLine(s1.GetBestSubjectByAvgGrade().name);
+    Console.WriteLine(s1.GetWorstSubjectByAvgGrade().name);
   }
 }

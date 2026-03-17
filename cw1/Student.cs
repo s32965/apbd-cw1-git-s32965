@@ -78,4 +78,37 @@ public class Student {
 
     return maxAvgSub;
   }
+
+  public Subject GetWorstSubjectByAvgGrade() {
+    Dictionary<Subject, double> sums = new Dictionary<Subject, double>();
+    Dictionary<Subject, int> numOfSub = new Dictionary<Subject, int>();
+
+    foreach (var g in grades) {
+      if (sums.ContainsKey(g.subject)) {
+        sums[g.subject] += g.grade;
+      } else {
+        sums.Add(g.subject, g.grade);
+      }
+
+      if (numOfSub.ContainsKey(g.subject)) {
+        numOfSub[g.subject] += 1;
+      } else {
+        numOfSub.Add(g.subject, 1);
+      }
+    }
+    Console.WriteLine(sums.Count);
+    Console.WriteLine(numOfSub.Count);
+  
+    double minAvg = sums[sums.First().Key]/numOfSub[sums.First().Key];
+    Subject? minAvgSub = null;
+    foreach (var key in sums) {
+      double avg = sums[key.Key]/numOfSub[key.Key];
+      if (avg < minAvg) {
+        minAvg = avg;
+        minAvgSub = key.Key;
+      }
+    }
+
+    return minAvgSub;
+  }
 }
